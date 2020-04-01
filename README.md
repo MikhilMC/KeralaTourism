@@ -1,1 +1,1 @@
-# KeralaTourism
+# Kerala Tourism Sample Website
