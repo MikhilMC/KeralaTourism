@@ -7,6 +7,10 @@
     height: 30rem;
 }
 
+.carousel-heading {
+    background-color: rgba(0, 0, 0, .5);
+}
+
 .description-heading {
     text-align: center;
 }
@@ -14,3 +18,40 @@
 .description-card-text {
     text-align: center;
 }
+
+.login-box {
+    border: solid 1px blue;
+    margin: 2rem;
+}
+
+.login-box h1 {
+    text-align: center;
+    padding: 10px 20px 10px;
+}
+
+form {
+    margin: 10px 30px auto;
+    padding: 20px ;
+}
+
+#description {
+    padding: 20px 30px 10px;
+}
+
+#connect-with-us{
+    text-align: center;
+    margin: 3% auto;
+}
+
+.social-media-icons {
+    padding: 10px 20px;
+}
+
+.districts-card {
+    padding: 10px 15px;
+}
+
+#districts img {
+    width: 100%;
+}
+
