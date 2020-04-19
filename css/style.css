@@ -80,6 +80,11 @@ form {
     width: 100%;
 }
 
+meter {
+    /* width: 600px !important; */
+    height: 25px !important;
+}
+
 /* Webkit based browsers */
 meter[value="1"]::-webkit-meter-optimum-value { background: red; }
 meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }

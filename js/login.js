@@ -15,8 +15,8 @@ function checkEmailValidity(email) {
     } else {
         let emailRegex = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
         if (emailRegex.test(email)) {
-            emailError.textContent = "Valid Email";
-            emailError.style.color = "green";
+            emailError.textContent = "";
+            //emailError.style.color = "green";
             return true;
         } else {
             emailError.textContent = "Invalid Email";
@@ -39,8 +39,8 @@ function checkPasswordValidity(password) {
     } else {
         let passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$/;
         if (passwordRegex.test(password)) {
-            passwordError.textContent = "Valid password";
-            passwordError.style.color = "green";
+            passwordError.textContent = "";
+            //passwordError.style.color = "green";
             return true;
         } else {
             passwordError.textContent = "Invalid password";
