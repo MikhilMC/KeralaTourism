@@ -64,47 +64,93 @@
     <section id="signup">
         <div class="signup-box">
             <h1>SIGN UP</h1>
-            <form>
+            <form action="./index.html" onsubmit="return validateSignup()">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputFirstName">First Name</label>
-                        <input type="text" class="form-control" id="inputFirstName">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputLastName">Last Name</label>
-                        <input type="text" class="form-control" id="inputLastName">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioMale"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadioMale">Male</label>
+                <div class="form-group form-row">
+                    <div class="col-md-1">
+                        <label for="gender">Gender</label>
+                        <!-- <legend class="col-form-label">Gender</legend> -->
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioFemale"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadioFemale">Female</label>
+                    <div class="col-md-5">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input check-box" type="radio" name="inlineRadioOptions" id="inlineRadioMale"
+                                value="male">
+                            <label class="form-check-label" for="inlineRadioMale">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input check-box" type="radio" name="inlineRadioOptions" id="inlineRadioFemale"
+                                value="female">
+                            <label class="form-check-label" for="inlineRadioFemale">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input check-box" type="radio" name="inlineRadioOptions" id="inlineRadioOthers"
+                                value="others">
+                            <label class="form-check-label" for="inlineRadioOthers">Others</label>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioOthers"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadioOthers">Others</label>
+                    <div class="col-md-2">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <!-- <legend class="col-form-label col-sm-5 pt-0">Date of Birth</legend> -->
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" id="dateOfBirth">
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <div class="col-md-2">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="col-md-10">
+                        <textarea id="address" class="form-control" cols="30" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <div class="col-md-6">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="pincode">Pincode</label>
+                        <input type="number" class="form-control" id="pincode">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumber">
+                    <label for="phoneNumber" id="phoneNumberError"></label>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="email">Email address</label>
+                    <input type="text" class="form-control" id="email">
+                    <label for="email" id="emailError"></label>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" oninput="checkPassword()">
+                    <meter min="0" max="3" class="form-control" id="strengthMeter1"></meter>
+                    <label for="passwordStrength" id="strengthStatus1"></label>
+                    <label for="password error" id="passwordError"></label>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" oninput="checkConfirmPassword()">
+                    <meter min="0" max="3" class="form-control" id="strengthMeter2"></meter>
+                    <label for="passwordStrength" id="strengthStatus2"></label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </section>
+    <script src="./js/signup.js"></script>
 </body>
 
 </html>

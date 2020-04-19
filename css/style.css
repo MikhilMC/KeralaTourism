@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
@@ -21,12 +26,32 @@
 
 .login-box {
     border: solid 1px blue;
-    margin: 2rem;
+    margin: 5rem 20rem;
+    width: 45rem;
 }
 
 .login-box h1 {
     text-align: center;
     padding: 10px 20px 10px;
+}
+
+.signup-box {
+    border: solid 1px blue;
+    margin: 5rem 19rem;
+    width: 45rem;
+}
+
+.signup-box h1 {
+    text-align: center;
+    padding: 10px 20px 10px;
+}
+
+.check-box {
+    margin: 0 5px 0 10px !important;
+}
+
+.form-check-inline {
+    margin-right: 0;
 }
 
 form {
@@ -55,3 +80,13 @@ form {
     width: 100%;
 }
 
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: green; }
+
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: green; }
