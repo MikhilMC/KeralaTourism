@@ -1,3 +1,11 @@
+let passwordGroup = document.querySelectorAll(".passwordGroup");
+let typePassword = document.querySelectorAll(".typePassword");
+let strengthMeter = document.querySelectorAll(".strengthMeter");
+let strengthStatus = document.querySelectorAll(".strengthStatus");
+
+passwordGroup[0].addEventListener("keyup", checkPassword);
+passwordGroup[1].addEventListener("keyup", checkPassword);
+
 function validateSignup() {
     let email = document.getElementById("email");
     let emailValidity = checkEmailValidity(email.value);
@@ -79,78 +87,74 @@ function checkPasswordValidity(password) {
 }
 
 function checkPassword() {
-    let regexArray = [];
-    let count = 0;
-    let password = document.getElementById("password").value;
-    let strengthMeter = document.getElementById("strengthMeter1");
-    let strength = document.getElementById("strengthStatus1");
+    let regexArray = new Array();
+    let count1 = 0, count2 = 0;
+
     regexArray.push(/(?=.*\d)/);
     regexArray.push(/(?=.*[a-z])/);
     regexArray.push(/(?=.*[A-Z])/);
-    //regexArray.push(/^(?=.{8,})/);
-    console.log(regexArray);
-    for (let i = 0; i < regexArray.length; i++) {
-        if (regexArray[i].test(password)) {
-            console.log(regexArray[i] + " " + password);
-            console.log(regexArray[i].test(password));
-            count += 1;
+    regexArray.push(/^(?=.{8,})/);
+
+    for (let i=0; i<regexArray.length; i++) {
+        if (regexArray[i].test(typePassword[0].value)) {
+            count1 += 1;
+        }
+        if (regexArray[i].test(typePassword[1].value)) {
+            count2 += 1;
         }
     }
-    switch (count) {
+    switch (count1) {
+        case 0:
+            strengthMeter[0].value = 0;
+            strengthStatus[0].textContent = "";
+            break;
         case 1:
-            strengthMeter.value = 1;
-            strength.textContent = "Poor";
-            strength.style.color = "red";
+            strengthMeter[0].value = 1;
+            strengthStatus[0].textContent = "Poor";
+            strengthStatus[0].style.color = "red";
             break;
         case 2:
-            strengthMeter.value = 2;
-            strength.textContent = "Medium";
-            strength.style.color = "orange";
+            strengthMeter[0].value = 2;
+            strengthStatus[0].textContent = "Weak";
+            strengthStatus[0].style.color = "orange";
             break;
         case 3:
-            strengthMeter.value = 3;
-            strength.textContent = "Strong";
-            strength.style.color = "green";
+            strengthMeter[0].value = 3;
+            strengthStatus[0].textContent = "Medium";
+            strengthStatus[0].style.color = "yellow";
+            break;
+        case 4:
+            strengthMeter[0].value = 4;
+            strengthStatus[0].textContent = "Strong";
+            strengthStatus[0].style.color = "green";
             break;
         default:
             break;
     }
-}
-
-function checkConfirmPassword() {
-    let regexArray = [];
-    let count = 0;
-    let password = document.getElementById("confirmPassword").value;
-    let strengthMeter = document.getElementById("strengthMeter2");
-    let strength = document.getElementById("strengthStatus2");
-    regexArray.push(/(?=.*\d)/);
-    regexArray.push(/(?=.*[a-z])/);
-    regexArray.push(/(?=.*[A-Z])/);
-    //regexArray.push(/^(?=.{8,})/);
-    console.log(regexArray);
-    for (let i = 0; i < regexArray.length; i++) {
-        if (regexArray[i].test(password)) {
-            console.log(regexArray[i] + " " + password);
-            console.log(regexArray[i].test(password));
-            count += 1;
-        }
-    }
-    switch (count) {
+    switch (count2) {
+        case 0:
+            strengthMeter[1].value = 0;
+            strengthStatus[1].textContent = "";
+            break;
         case 1:
-            strengthMeter.value = 1;
-            strength.textContent = "Poor";
-            strength.style.color = "red";
+            strengthMeter[1].value = 1;
+            strengthStatus[1].textContent = "Poor";
+            strengthStatus[1].style.color = "red";
             break;
         case 2:
-            strengthMeter.value = 2;
-            strength.textContent = "Medium";
-            strength.style.color = "orange";
+            strengthMeter[1].value = 2;
+            strengthStatus[1].textContent = "Weak";
+            strengthStatus[1].style.color = "orange";
             break;
         case 3:
-            strengthMeter.value = 3;
-            strength.textContent = "Strong";
-            strength.style.color = "green";
+            strengthMeter[1].value = 3;
+            strengthStatus[1].textContent = "Medium";
+            strengthStatus[1].style.color = "yellow";
             break;
+        case 4:
+            strengthMeter[1].value = 4;
+            strengthStatus[1].textContent = "Strong"
+            strengthStatus[1].style.color = "green"
         default:
             break;
     }

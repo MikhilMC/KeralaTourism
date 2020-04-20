@@ -133,18 +133,18 @@
                     <input type="text" class="form-control" id="email">
                     <label for="email" id="emailError"></label>
                 </div>
-                <div class="form-group">
+                <div class="form-group passwordGroup" onkeydown="checkPassword()">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" oninput="checkPassword()">
-                    <meter min="0" max="3" class="form-control" id="strengthMeter1"></meter>
-                    <label for="passwordStrength" id="strengthStatus1"></label>
+                    <input type="password" class="form-control typePassword" id="password">
+                    <meter min="0" max="4" class="form-control strengthMeter"></meter>
+                    <label for="passwordStrength" class="strengthStatus"></label>
                     <label for="password error" id="passwordError"></label>
                 </div>
-                <div class="form-group">
+                <div class="form-group passwordGroup" onkeydown="checkPassword()">
                     <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" oninput="checkConfirmPassword()">
-                    <meter min="0" max="3" class="form-control" id="strengthMeter2"></meter>
-                    <label for="passwordStrength" id="strengthStatus2"></label>
+                    <input type="password" class="form-control typePassword">
+                    <meter min="0" max="4" class="form-control strengthMeter"></meter>
+                    <label for="passwordStrength" class="strengthStatus"></label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
