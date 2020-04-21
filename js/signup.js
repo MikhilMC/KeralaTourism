@@ -103,58 +103,37 @@ function checkPassword() {
             count2 += 1;
         }
     }
-    switch (count1) {
+    
+    switchingStatus(count1, 0);
+    switchingStatus(count2, 1);
+}
+
+function switchingStatus (count, index) {
+    switch (count) {
         case 0:
-            strengthMeter[0].value = 0;
-            strengthStatus[0].textContent = "";
+            strengthMeter[index].value = 0;
+            strengthStatus[index].textContent = "";
             break;
         case 1:
-            strengthMeter[0].value = 1;
-            strengthStatus[0].textContent = "Poor";
-            strengthStatus[0].style.color = "red";
+            strengthMeter[index].value = 1;
+            strengthStatus[index].textContent = "Poor";
+            strengthStatus[index].style.color = "red";
             break;
         case 2:
-            strengthMeter[0].value = 2;
-            strengthStatus[0].textContent = "Weak";
-            strengthStatus[0].style.color = "orange";
+            strengthMeter[index].value = 2;
+            strengthStatus[index].textContent = "Weak";
+            strengthStatus[index].style.color = "orange";
             break;
         case 3:
-            strengthMeter[0].value = 3;
-            strengthStatus[0].textContent = "Medium";
-            strengthStatus[0].style.color = "yellow";
+            strengthMeter[index].value = 3;
+            strengthStatus[index].textContent = "Medium";
+            strengthStatus[index].style.color = "yellow";
             break;
         case 4:
-            strengthMeter[0].value = 4;
-            strengthStatus[0].textContent = "Strong";
-            strengthStatus[0].style.color = "green";
+            strengthMeter[index].value = 4;
+            strengthStatus[index].textContent = "Strong";
+            strengthStatus[index].style.color = "green";
             break;
-        default:
-            break;
-    }
-    switch (count2) {
-        case 0:
-            strengthMeter[1].value = 0;
-            strengthStatus[1].textContent = "";
-            break;
-        case 1:
-            strengthMeter[1].value = 1;
-            strengthStatus[1].textContent = "Poor";
-            strengthStatus[1].style.color = "red";
-            break;
-        case 2:
-            strengthMeter[1].value = 2;
-            strengthStatus[1].textContent = "Weak";
-            strengthStatus[1].style.color = "orange";
-            break;
-        case 3:
-            strengthMeter[1].value = 3;
-            strengthStatus[1].textContent = "Medium";
-            strengthStatus[1].style.color = "yellow";
-            break;
-        case 4:
-            strengthMeter[1].value = 4;
-            strengthStatus[1].textContent = "Strong"
-            strengthStatus[1].style.color = "green"
         default:
             break;
     }
