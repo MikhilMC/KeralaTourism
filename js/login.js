@@ -13,7 +13,7 @@ function checkEmailValidity(email) {
         emailError.style.color = "red";
         return false;
     } else {
-        let emailRegex = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+        let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (emailRegex.test(email)) {
             emailError.textContent = "";
             //emailError.style.color = "green";
